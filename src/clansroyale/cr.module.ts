@@ -7,13 +7,17 @@ import 'hammerjs';
 import { MaterialsModule } from './modules/materials/materials.module';
 import { CrRoutingModule } from './cr.routing';
 
+// Components
 import { CrComponent } from './cr.component';
 import { CrCardComponent } from './components/cr-card/cr-card.component';
+import { CrFooterComponent } from './components/cr-footer/cr-footer.component';
+import { CrNavbarComponent } from './components/cr-navbar/cr-navbar.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
 import { NewClanComponent } from './pages/new-clan/new-clan.component';
 import { AboutComponent } from './pages/about/about.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 @NgModule({
   imports: [
@@ -28,7 +32,10 @@ import { AboutComponent } from './pages/about/about.component';
     CrCardComponent,
     HomeComponent,
     NewClanComponent,
-    AboutComponent
+    AboutComponent,
+    CrFooterComponent,
+    CrNavbarComponent,
+    TermsComponent
   ],
   providers: [],
   bootstrap: [CrComponent]

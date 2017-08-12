@@ -1,5 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/scss/bootstrap-grid";
+@import '~font-awesome/css/font-awesome.css';
 
 @font-face {
   font-family: 'Roboto';
@@ -66,3 +67,10 @@ body {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+.margin-top { margin-top: 1em; }
+.margin-bottom { margin-bottom: 1em; }
+.margin-right { margin-right: 1em; }
+.margin-left { margin-left: 1em; }
+.gray { color: #888888; }
+.dark-gray { color: darken(#888888, 10%); }

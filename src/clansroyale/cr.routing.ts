@@ -7,6 +7,7 @@ import { CrComponent } from './cr.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewClanComponent } from './pages/new-clan/new-clan.component';
 import { AboutComponent } from './pages/about/about.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'new', component: NewClanComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'terms', component: TermsComponent },
       { path: '**', redirectTo: '' }
     ]
   }
