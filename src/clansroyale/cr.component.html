@@ -1,5 +1,24 @@
-<md-toolbar color="primary">Clans Royale</md-toolbar>
+<div fxLayout="column" style="height: 100%">
 
-<cr-clan-card></cr-clan-card>
+	<div>
+		<md-toolbar color="primary">
+			Clans Royale
+			<a md-button routerLink="/"><i class="material-icons">home</i></a>
+			<a md-button routerLink="/new">Post Clan</a>
+			<a md-button routerLink="/about" style="margin-left: auto">About</a>
+		</md-toolbar>
+		<a routerLink="/new" class="fab-post-clan" md-fab mdTooltip="Post Clan" mdTooltipPosition="left"><i class="material-icons">add</i></a>
+	</div>
 
-<button md-fab><i class="material-icons">add</i></button>
+	<div fxFlex>
+		<router-outlet></router-outlet>
+	</div>
+
+	<div>
+		<md-toolbar>
+			<small style="text-align: center">
+				Made with <3 by Jason
+			</small>
+		</md-toolbar>
+	</div>
+</div>

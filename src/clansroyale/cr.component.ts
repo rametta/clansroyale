@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './cr.component.html',
   styleUrls: ['./cr.component.scss']
 })
-export class AppComponent {
+export class CrComponent {
 }

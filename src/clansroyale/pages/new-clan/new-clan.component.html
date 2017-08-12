@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <form fxLayout="column">
+
+        <div fxLayout>
+
+          <div fxFlex="50%">
+            <md-input-container class="full-width">
+              <input required mdInput placeholder="Clan name">
+            </md-input-container>
+          </div>
+
+          <div fxFlex="50%">
+            <md-input-container class="full-width">
+              <input required mdInput placeholder="Clan tag #">
+            </md-input-container>
+          </div>
+
+        </div>
+
+        <div fxLayout>
+
+          <div>
+            <md-slider [max]="6000" [min]="0" [step]="100" [value]="1600"></md-slider>
+          </div>
+
+          <div>
+            <md-checkbox [checked]="checked">Invite Only</md-checkbox>
+          </div>
+
+        </div>
+
+        <div fxLayout>
+
+          <md-input-container class="example-full-width">
+            <textarea mdInput #description maxlength="255" placeholder="Description"></textarea>
+            <md-hint align="end">{{description.value.length}} / 255</md-hint>
+          </md-input-container>
+
+        </div>
+
+        <div fxLayout>
+          <button type="submit" md-button>Post</button>
+        </div>
+      
+      </form>
+
+    </div>
+  </div>
+</div>
