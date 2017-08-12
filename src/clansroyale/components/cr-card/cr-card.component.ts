@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cr-cr-card',
+  selector: 'cr-clan-card',
   templateUrl: './cr-card.component.html',
   styleUrls: ['./cr-card.component.css']
 })

@@ -3,9 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import 'hammerjs';
 
-import { MaterialsModule } from './materials/materials.module';
+import { MaterialsModule } from './modules/materials/materials.module';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './cr.component';
+import { CrCardComponent } from './components/cr-card/cr-card.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     MaterialsModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    CrCardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
