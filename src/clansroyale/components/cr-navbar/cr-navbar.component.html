@@ -1,7 +1,25 @@
 <md-toolbar color="primary">
   <img routerLink="/" src="/assets/logo.png" class="logo-thumb">
   <span routerLink="/" class="title">Clans Royale</span>
-  <a md-button routerLink="/about" routerLinkActive="active" style="margin-left: auto">About</a>
+
+  <button md-icon-button [mdMenuTriggerFor]="menu" style="margin-left: auto">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item (click)="login()" *ngIf="user === null">
+      <md-icon><i class="fa fa-twitter"></i></md-icon>
+      <span>Login</span>
+    </button>
+    <a md-menu-item routerLink="/about">
+      <md-icon>comment</md-icon>
+      <span>About</span>
+    </a>
+    <a md-menu-item routerLink="/terms">
+      <md-icon>forum</md-icon>
+      <span>Terms</span>
+    </a>
+  </md-menu>
+
 </md-toolbar>
 
 <a routerLink="/new" class="fab-post-clan" md-fab mdTooltip="Post Clan" mdTooltipPosition="left"><i class="material-icons">add</i></a>

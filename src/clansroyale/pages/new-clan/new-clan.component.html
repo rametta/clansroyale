@@ -9,32 +9,32 @@
   <div class="row">
 
 
-    <form>
+    <form [formGroup]="clanForm" novalidate (ngSubmit)="submitClan()">
 
       <div class="container-fluid">
         <div class="row">
 
           <div class="col-6">
             <md-input-container class="full-width">
-              <input required mdInput placeholder="Clan name">
+              <input formControlName="name" required mdInput placeholder="Clan name">
             </md-input-container>
           </div>
 
           <div class="col-6">
             <md-input-container class="full-width">
-                <span mdPrefix># &nbsp;</span>
-              <input required mdInput placeholder="Clan tag">
+              <span mdPrefix># &nbsp;</span>
+              <input formControlName="tag" required mdInput placeholder="Clan tag">
             </md-input-container>
           </div>
 
           <div class="col-12">
             <div class="gray">Trophies Required - {{trophies.value}}</div>
-            <md-slider #trophies class="full-width" [max]="6000" [min]="0" [step]="100" [value]="1600"></md-slider>
+            <md-slider formControlName="trophies" #trophies class="full-width" [max]="6000" [min]="0" [step]="100" [value]="1600"></md-slider>
           </div>
 
           <div class="col-12">
             <md-input-container class="full-width">
-              <textarea required class="description" mdInput #description maxlength="255" placeholder="Description"></textarea>
+              <textarea formControlName="description" required class="description" mdInput #description maxlength="255" placeholder="Description"></textarea>
               <md-hint align="start">What's your clan all about?</md-hint>
               <md-hint align="end">{{description.value.length}} / 255</md-hint>
             </md-input-container>

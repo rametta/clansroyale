@@ -38,7 +38,7 @@ import { Component } from '@angular/core';
             <md-divider></md-divider>
 
             <div class="margin-top disclaimer">
-            <small>*All posts are subject to removal for breaking the <a routerLink="/terms">terms &amp; services</a></small>
+              <small>*All posts are subject to removal for breaking the <a routerLink="/terms">terms &amp; services</a></small>
             </div>
 
           </md-list>
