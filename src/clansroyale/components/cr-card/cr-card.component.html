@@ -1,3 +1,22 @@
-<p>
-  cr-card works!
-</p>
+<md-card>
+  <md-card-header>
+    <md-card-title>{{clan.name}}</md-card-title>
+    <md-card-subtitle>#<span class="clan-tag">{{clan.tag}}</span></md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <p class="clan-description">
+      {{clan.description}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <div class="card-footer">
+      <div>
+        <small class="gray">{{clan.date | date:'MMM d, y h:mm a'}}</small>
+      </div>
+      <div class="trophies-container">
+        <small>{{clan.trophies}}<i class="fa fa-trophy trophy" aria-hidden="true"></i></small>
+      </div>
+    </div>
+    <div [hidden]="true">{{clan.$key}}</div>
+  </md-card-actions>
+</md-card>

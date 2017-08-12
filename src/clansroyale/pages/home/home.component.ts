@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { IClan } from './../../cr';
@@ -11,12 +10,18 @@ import { IClan } from './../../cr';
 })
 export class HomeComponent implements OnInit {
 
-  user: Observable<firebase.User>;
   clans: FirebaseListObservable<Array<IClan>>;
+  loadingClans = true;
 
   constructor(public db: AngularFireDatabase) {}
 
   ngOnInit() {
     this.clans = this.db.list('/clans');
+
+    this.clans
+      .subscribe(clan => { 
+        this.loadingClans = false;
+        console.log(clan)
+      });
   }
 }

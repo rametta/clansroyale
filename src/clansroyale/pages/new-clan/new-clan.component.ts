@@ -13,7 +13,7 @@ import { IClan } from './../../cr';
 })
 export class NewClanComponent implements OnInit {
 
-  user: Observable<firebase.User>;
+  user: firebase.User;
   clans: FirebaseListObservable<Array<IClan>>;
 
   clanForm: FormGroup = this.fb.group({
@@ -26,10 +26,12 @@ export class NewClanComponent implements OnInit {
   constructor(
     public db: AngularFireDatabase, 
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    public afAuth: AngularFireAuth
   ) { }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe(user => this.user = user);
     this.clans = this.db.list('/clans');
   }
 

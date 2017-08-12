@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 // Firebase
@@ -41,7 +40,6 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    FlexLayoutModule,
     CrRoutingModule,
     MaterialsModule
   ],

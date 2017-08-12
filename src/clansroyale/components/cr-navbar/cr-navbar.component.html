@@ -18,6 +18,10 @@
       <md-icon>forum</md-icon>
       <span>Terms</span>
     </a>
+    <button md-menu-item (click)="logout()" *ngIf="user !== null">
+      <md-icon><i class="fa fa-twitter"></i></md-icon>
+      <span>Logout</span>
+    </button>
   </md-menu>
 
 </md-toolbar>

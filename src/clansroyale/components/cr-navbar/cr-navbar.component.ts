@@ -10,14 +10,19 @@ import { Observable } from 'rxjs/Observable';
 })
 export class CrNavbarComponent {
 
-  user: Observable<firebase.User>;
-  
+  user: firebase.User;
+
   constructor(public afAuth: AngularFireAuth) {
-    this.user = afAuth.authState;
+    afAuth.authState
+      .subscribe(user => this.user = user);
   }
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
 }

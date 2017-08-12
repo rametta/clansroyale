@@ -41,8 +41,9 @@
           </div>
 
           <div class="col-12 margin-top submit-container">
+            <div class="alert" *ngIf="!user">You must be signed in to post a clan</div>
             <div style="margin-left: auto">
-              <button type="submit" md-raised-button color="primary">Post</button>
+              <button type="submit" [disabled]="!user" md-raised-button color="primary">Post</button>
             </div>
           </div>
 

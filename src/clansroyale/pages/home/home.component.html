@@ -1,4 +1,11 @@
-home page
-<!-- <cr-clan-card></cr-clan-card> -->
+<div class="progress-container">
+  <md-progress-bar *ngIf="loadingClans" color="accent" mode="indeterminate"></md-progress-bar>
+</div>
 
-{{ clans | async | json }}
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 margin-top" *ngFor="let clan of clans | async">
+      <cr-clan-card [clan]="clan"></cr-clan-card>
+    </div>
+  </div>
+</div>
