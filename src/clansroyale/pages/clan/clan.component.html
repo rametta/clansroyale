@@ -20,15 +20,49 @@
         {{clan?.description}}
       </div>
 
+      <div class="margin-top clan-footer gray">
+        <div>
+          <small>{{clan?.date | date:'MMM d, y h:mm a'}}</small>
+        </div>
+        <div class="posted-by">
+          <small>Posted by: {{clan?.postedByName}}</small>
+        </div>
+      </div>
+
       <div class="margin-top">
-        <small class="gray">{{clan?.date | date:'MMM d, y h:mm a'}}</small>
+        <h2>Comments</h2>
+
+        <form [formGroup]="commentForm" novalidate (ngSubmit)="submitComment()">
+          <md-input-container class="comment-box">
+            <textarea #comment required formControlName="comment" mdInput placeholder="Comment..." maxlength="500"></textarea>
+          </md-input-container>
+          <div class="btn-container">
+            <div class="gray" *ngIf="!user">You must <span class="accent hand" (click)="login()">login</span> to post a comment</div>
+            <button [disabled]="!user || comment.value.length < 2" class="submit-btn" md-raised-button color="primary" type="submit">Submit</button>
+          </div>
+        </form>
+
+        <md-card *ngFor="let commentKey of commentKeys()" class="margin-top">
+          <md-card-header>
+            <md-card-title>{{clan.comments[commentKey].username}}<span class="accent" [hidden]="clan.postedByUid !== clan.comments[commentKey].uid">*</span></md-card-title>
+            <md-card-subtitle>{{clan.comments[commentKey].date | date:'MMM d, y h:mm a'}}</md-card-subtitle>
+          </md-card-header>
+          <md-card-content>
+            <p>{{clan.comments[commentKey].comment}}</p>
+          </md-card-content>
+        </md-card>
+
+        <div class="margin-top gray no-comments" *ngIf="!clan || !clan.comments">
+          There are no comments yet on this post
+        </div>
+
       </div>
 
     </div>
   </div>
 </div>
 
-<div class="container" *ngIf="!clan && !loadingCLan">
+<div class="container" *ngIf="!clan && !loadingClan">
   <div class="row">
     <div class="col-12">
       Whoops, no clan here. Go <a routerLink="/">Home</a>

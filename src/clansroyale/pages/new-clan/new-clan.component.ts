@@ -41,14 +41,17 @@ export class NewClanComponent implements OnInit {
       tag: this.clanForm.get('tag').value,
       trophies: this.clanForm.get('trophies').value,
       description: this.clanForm.get('description').value,
-      date: new Date().toISOString()
+      date: new Date().toISOString(),
+      postedByName: this.user.displayName,
+      postedByUid: this.user.uid,
+      comments: {}
     };
 
     if (!clan.name || !clan.description || !clan.tag || !this.user) { return; }
 
     this.clans.push(clan)
       .then(res => this.router.navigate(['/']))
-      .catch(err => console.log(err));
+      .catch(err => console.error(err));
 
   }
 

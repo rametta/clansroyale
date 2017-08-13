@@ -40,7 +40,7 @@
           </div>
 
           <div class="col-12 margin-top submit-container">
-            <div *ngIf="!user">You must <span class="accent hand" (click)="login()">signin</span> to post a clan</div>
+            <div *ngIf="!user">You must <span class="accent hand" (click)="login()">login</span> to post a clan</div>
             <div style="margin-left: auto">
               <button type="submit" [disabled]="!user" md-raised-button color="primary">Post</button>
             </div>

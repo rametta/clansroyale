@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
         <router-outlet></router-outlet>
       </div>
     
-      <div>
+      <div class="margin-top">
         <cr-footer></cr-footer>
       </div>
     </div>

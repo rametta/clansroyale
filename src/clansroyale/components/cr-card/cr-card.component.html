@@ -1,7 +1,9 @@
 <a class="cr-card" routerLink="/clan/{{clan.$key}}">
   <md-card>
     <md-card-header>
-      <md-card-title>{{clan.name}}</md-card-title>
+      <md-card-title>
+        <div class="card-head">{{clan.name}}</div>
+      </md-card-title>
       <md-card-subtitle>#<span class="clan-tag">{{clan.tag}}</span></md-card-subtitle>
     </md-card-header>
     <md-card-content>
@@ -18,7 +20,6 @@
           <small>{{clan.trophies}} <i class="fa fa-trophy accent" aria-hidden="true"></i></small>
         </div>
       </div>
-      <div [hidden]="true">{{clan.$key}}</div>
     </md-card-actions>
   </md-card>
 </a>
