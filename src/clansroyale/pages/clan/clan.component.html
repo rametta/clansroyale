@@ -1,0 +1,37 @@
+<div class="progress-container">
+  <md-progress-bar *ngIf="loadingClan" color="accent" mode="indeterminate"></md-progress-bar>
+</div>
+
+<div class="container" *ngIf="clan">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="clan-header">
+        <div class="clan-summary">
+          <h1 class="clan-name">{{clan?.name}}</h1>
+          <small class="gray clan-tag">#{{clan?.tag}}</small>
+        </div>
+        <div class="clan-trophies">
+          <h1 class="no-wrap">{{clan?.trophies}} <i class="fa fa-trophy accent" aria-hidden="true"></i></h1>
+        </div>
+      </div>
+
+      <div class="margin-top">
+        {{clan?.description}}
+      </div>
+
+      <div class="margin-top">
+        <small class="gray">{{clan?.date | date:'MMM d, y h:mm a'}}</small>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!clan && !loadingCLan">
+  <div class="row">
+    <div class="col-12">
+      Whoops, no clan here. Go <a routerLink="/">Home</a>
+    </div>
+  </div>
+</div>

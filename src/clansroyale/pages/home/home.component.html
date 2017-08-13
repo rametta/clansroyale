@@ -4,8 +4,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 margin-top" *ngFor="let clan of clans | async">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 margin-top" *ngFor="let clan of clans | async | reverse">
       <cr-clan-card [clan]="clan"></cr-clan-card>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="(clans | async)?.length === 0 && !loadingClans">
+  <div class="row">
+    <div class="col-12 no-clans dark-gray">
+      <p>There are no clans looking for members at this time, check back soon or <a routerLink="/new">post</a> your clan!</p>
     </div>
   </div>
 </div>

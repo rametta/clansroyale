@@ -8,7 +8,6 @@
 
   <div class="row">
 
-
     <form [formGroup]="clanForm" novalidate (ngSubmit)="submitClan()">
 
       <div class="container-fluid">
@@ -16,14 +15,14 @@
 
           <div class="col-6">
             <md-input-container class="full-width">
-              <input formControlName="name" required mdInput placeholder="Clan name">
+              <input formControlName="name" required mdInput placeholder="Clan name" maxlength="100">
             </md-input-container>
           </div>
 
           <div class="col-6">
             <md-input-container class="full-width">
               <span mdPrefix># &nbsp;</span>
-              <input formControlName="tag" required mdInput placeholder="Clan tag">
+              <input formControlName="tag" required mdInput placeholder="Clan tag" maxlength="8">
             </md-input-container>
           </div>
 
@@ -34,14 +33,14 @@
 
           <div class="col-12">
             <md-input-container class="full-width">
-              <textarea formControlName="description" required class="description" mdInput #description maxlength="255" placeholder="Description"></textarea>
+              <textarea formControlName="description" required class="description" mdInput #description maxlength="1000" placeholder="Description"></textarea>
               <md-hint align="start">What's your clan all about?</md-hint>
-              <md-hint align="end">{{description.value.length}} / 255</md-hint>
+              <md-hint align="end">{{description.value.length}} / 1000</md-hint>
             </md-input-container>
           </div>
 
           <div class="col-12 margin-top submit-container">
-            <div class="alert" *ngIf="!user">You must be signed in to post a clan</div>
+            <div *ngIf="!user">You must <span class="accent hand" (click)="login()">signin</span> to post a clan</div>
             <div style="margin-left: auto">
               <button type="submit" [disabled]="!user" md-raised-button color="primary">Post</button>
             </div>

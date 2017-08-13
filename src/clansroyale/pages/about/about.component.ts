@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
           <h1>About!</h1>
 
           <div>
-            Welcome to Clans Royale &trade; the one stop shop for finding clan members!
+            Welcome to Clans Royale &trade; the one stop shop for finding clan members for Clash Royale!
           </div>
 
           <md-list>

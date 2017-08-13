@@ -24,6 +24,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewClanComponent } from './pages/new-clan/new-clan.component';
 import { AboutComponent } from './pages/about/about.component';
 import { TermsComponent } from './pages/terms/terms.component';
+import { ClanComponent } from './pages/clan/clan.component';
+
+// Pipes
+import { ReversePipe } from './pipes/reverse.pipe';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyA5qbyeV6hS0Qim4XcFsBFrx53daDSiGPY',
@@ -51,7 +55,9 @@ export const firebaseConfig = {
     AboutComponent,
     CrFooterComponent,
     CrNavbarComponent,
-    TermsComponent
+    TermsComponent,
+    ReversePipe,
+    ClanComponent
   ],
   providers: [],
   bootstrap: [CrComponent]

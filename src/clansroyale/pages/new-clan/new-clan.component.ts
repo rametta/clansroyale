@@ -52,4 +52,8 @@ export class NewClanComponent implements OnInit {
 
   }
 
+  login() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
+
 }

@@ -68,9 +68,15 @@ body {
   font-feature-settings: 'liga';
 }
 
+$accent: #ff4081;
+
 .margin-top { margin-top: 1em; }
 .margin-bottom { margin-bottom: 1em; }
 .margin-right { margin-right: 1em; }
 .margin-left { margin-left: 1em; }
 .gray { color: #888888; }
 .dark-gray { color: darken(#888888, 10%); }
+.progress-container { height: 5px; }
+.accent { color: $accent; }
+.accent-bg { background-color: $accent; }
+.hand { cursor: pointer; }
