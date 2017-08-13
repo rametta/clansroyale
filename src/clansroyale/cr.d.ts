@@ -4,4 +4,5 @@ export interface IClan {
   trophies: number;
   description: string;
   date: string;
+  $key?: string;
 }

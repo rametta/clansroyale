@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     this.clans
       .subscribe(clan => { 
         this.loadingClans = false;
-        console.log(clan)
+      }, err => {
+        console.error(err);
       });
   }
 }

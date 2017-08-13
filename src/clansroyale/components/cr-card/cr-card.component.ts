@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-// import { IClan } from './../../cr'; Webpack is failing to parse this line properly
+// import { IClan } from './../../cr';
 
 @Component({
   selector: 'cr-clan-card',
