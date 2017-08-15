@@ -25,7 +25,7 @@
           <small>{{clan?.date | date:'MMM d, y h:mm a'}}</small>
         </div>
         <div class="posted-by">
-          <small>Posted by: {{clan?.postedByName}}</small>
+          <small>Posted by: <a routerLink="/user/{{clan?.postedByUid}}">{{clan?.postedByName}}</a></small>
         </div>
       </div>
 

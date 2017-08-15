@@ -25,6 +25,7 @@ import { NewClanComponent } from './pages/new-clan/new-clan.component';
 import { AboutComponent } from './pages/about/about.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { ClanComponent } from './pages/clan/clan.component';
+import { UserComponent} from './pages/user/user.component';
 
 // Pipes
 import { ReversePipe } from './pipes/reverse.pipe';
@@ -57,7 +58,8 @@ export const firebaseConfig = {
     CrNavbarComponent,
     TermsComponent,
     ReversePipe,
-    ClanComponent
+    ClanComponent,
+    UserComponent
   ],
   providers: [],
   bootstrap: [CrComponent]

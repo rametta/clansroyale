@@ -1,4 +1,8 @@
-export interface IClan {
+interface IFirebaseObject {
+  $key?: string;
+}
+
+export interface IClan extends IFirebaseObject {
   name: string;
   tag: string;
   trophies: number;
@@ -7,13 +11,21 @@ export interface IClan {
   postedByUid: string;
   postedByName: string;
   comments: {[commentId: string]: IComment};
-  $key?: string;
 }
 
-export interface IComment {
+export interface IComment extends IFirebaseObject  {
   comment: string;
   date: string;
   uid: string;
   username: string;
-  $key?: string;
+}
+
+export interface IProfile extends IFirebaseObject  {
+  displayName: string;
+  lastUpdate: string;
+  name: string;
+  nickname: string;
+  photo: string;
+  uid: string;
+  $exists?(): boolean;
 }

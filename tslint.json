@@ -118,13 +118,15 @@
       true,
       "attribute",
       "app",
-      "camelCase"
+      "camelCase",
+      "cr"
     ],
     "component-selector": [
       true,
       "element",
       "app",
-      "kebab-case"
+      "kebab-case",
+      "cr"
     ],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
